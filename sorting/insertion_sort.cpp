@@ -20,19 +20,6 @@ void swap (int *a, int *b)
     *a = *b;
     *b = c;
 }
-void insertion(int *v, int n)
-{   
-    int i,j,chave;
-    for(i=1;i<n;i++)
-    {
-        j=i-1;
-        while (j>=0 && v[i]>v[j])
-        {
-            swap(v[j], v[i]);
-            j--;
-        }
-    }
-}
 void print_v(int *v, int n)
 {
     int i;
@@ -41,6 +28,22 @@ void print_v(int *v, int n)
         cout << v[i] << " ";
     }
     cout <<endl;
+}
+void insertion(int *v, int n)
+{   
+    int i,j,key;
+    for(i=1;i<n;i++)
+    {
+        key = v[i];
+        j=i-1;
+        while (j>=0 && key<v[j])
+        {
+            swap(v[j], v[j+1]);
+            j--;
+        }
+        v[j+1]=key;
+        // print_v(v,n); //uncomment to show each step in this sorting algorithm
+    }
 }
 int main()
 {
