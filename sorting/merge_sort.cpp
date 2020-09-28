@@ -76,11 +76,11 @@ void merge(int *v, int s, int m, int e)
 }
 void merge_sort(int *v, int b, int e)
 {
-    // make a simple check if begin position is still minor than the end position, otherwise it has size 1
+    // make a simple check if begin  position is still minor than the end position, otherwise it has length 0
     if(b<e)
     {
         //int m = (b+e)/2; //middle point of vector
-        int m = b + (e-b)/2;
+        int m = b + (e-b)/2; //use it to avoid long integers problems
         //remember break it in subproblems (divide and conquer), small pieces of the vector
         //merge_sort to left
         merge_sort(v, b, m);
