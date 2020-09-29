@@ -9,17 +9,8 @@ typedef unsigned long long int ulli;
 typedef long int li;
 typedef long long int lli;
 typedef struct a A;
-#define DBG if(0)
-struct a
-{
-};
+#define DBG if(0);
 
-void swap(int *a, int *b)
-{
-    int c = *a;
-    *a = *b;
-    *b = c;
-}
 void print_v(int* v, int n)
 {
     int i;
