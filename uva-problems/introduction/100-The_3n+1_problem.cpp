@@ -47,9 +47,13 @@ int main()
 {
     lli n,m;
     int size=0, max=0;
-    while(scanf("%lld %lld", &n,&m)!=EOF)
+    while(cin >> n >>m)
     {
-        for(int i=n;i<=m;i++)
+        lli a,b;
+        a=n;
+        b=m;
+        if(n>m)swap(a,b);
+        for(int i=a;i<=b;i++)
         {
             find(i, &size);
             if(max < size) max = size;
